@@ -4,6 +4,7 @@
   "main": "./src/worker/index.ts",
   "compatibility_date": "2025-10-08",
   "compatibility_flags": ["nodejs_compat"],
+  "account_id": "f6fc3a9de4c937140e780ff31b8c8f60",
   "observability": {
     "enabled": true,
   },
@@ -28,8 +29,8 @@
   "kv_namespaces": [
     {
       "binding": "OAUTH_KV",
-      "id": "OAUTH_KV_NAMESPACE_ID",
-      "preview_id": "OAUTH_KV_NAMESPACE_ID"
+      "id": "e70a15b1cbd54dabb66f5bc5fc2a356e",
+      "preview_id": "e70a15b1cbd54dabb66f5bc5fc2a356e"
     }
   ]
 }
