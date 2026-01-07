@@ -5,6 +5,9 @@
   "compatibility_date": "2025-10-08",
   "compatibility_flags": ["nodejs_compat"],
   "account_id": "f6fc3a9de4c937140e780ff31b8c8f60",
+  "routes": [
+    { "pattern": "brainwav.io", "zone_name": "brainwav.io" }
+  ],
   "observability": {
     "enabled": true,
   },
