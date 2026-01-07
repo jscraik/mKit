@@ -1,11 +1,39 @@
 # MCP Boilerplate
 
-A comprehensive Cloudflare Workers MCP server template with:
+> A reusable Cloudflare Workers MCP server template with OAuth, Stripe, and OpenAI Apps SDK integration. Designed to be cloned or copied as a starting point for new projects.
+
+A comprehensive template with:
 - **OAuth 2.1 authentication** (Google/GitHub + Apps SDK compliance)
 - **Stripe monetization** (subscription, one-time, metered billing)
 - **OpenAI Apps SDK integration** (React UI widgets + streaming HTTP)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+## Quick Start
+
+```bash
+# Clone this repository
+git clone https://github.com/your-username/mcp-boilerplate.git my-project
+cd my-project
+
+# Or copy to an existing project
+cp -r /path/to/mcp-boilerplate/* /path/to/my-project/
+
+# Install dependencies
+pnpm install
+
+# Configure environment
+cp .env.example .env
+# Edit .env with your credentials
+
+# Create KV namespace
+pnpm wrangler kv namespace create OAUTH_KV
+
+# Update wrangler.jsonc with the namespace ID and your account_id
+
+# Deploy
+pnpm build-deploy
+```
 
 ## Features
 
