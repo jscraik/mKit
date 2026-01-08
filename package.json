@@ -1,6 +1,6 @@
 {
-  "name": "mcp-boilerplate",
-  "description": "A Cloudflare Workers MCP server template with OAuth authentication, Stripe monetization, and OpenAI Apps SDK integration",
+  "name": "mkit",
+  "description": "The official boilerplate for bootstrapping MCP servers on Cloudflare Workers with OAuth, Stripe monetization, and OpenAI Apps SDK integration",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.20.0",
     "@stripe/agent-toolkit": "latest",

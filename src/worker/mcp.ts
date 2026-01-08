@@ -35,7 +35,7 @@ export type AuthProps = PaymentProps & {
  */
 export class BoilerplateMCP extends PaidMcpAgent<Env, PaymentState, AuthProps> {
   server = new McpServer({
-    name: "BoilerplateMCP",
+    name: "mKit",
     version: "1.0.0",
   });
 

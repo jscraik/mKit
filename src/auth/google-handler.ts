@@ -37,10 +37,10 @@ app.get("/authorize", async (c) => {
     client: await c.env.OAUTH_PROVIDER.lookupClient(clientId),
     server: {
       provider: "google",
-      name: "MCP Boilerplate",
+      name: "mKit",
       logo: "https://avatars.githubusercontent.com/u/314135?s=200&v=4",
       description:
-        "This is a boilerplate MCP that you can use to build your own remote MCP server, with Stripe integration for paid tools and Google/GitHub authentication.",
+        "mKit is the official boilerplate for bootstrapping MCP servers on Cloudflare Workers with Stripe integration and Google/GitHub authentication.",
     },
     state: { oauthReqInfo },
   });
