@@ -27,6 +27,7 @@
     "eslint-plugin-react-refresh": "0.4.23",
     "fast-glob": "^3.3.3",
     "globals": "16.4.0",
+    "tsx": "^4.21.0",
     "typescript": "5.9.3",
     "typescript-eslint": "8.46.0",
     "vite": "^7.1.11",
@@ -34,6 +35,7 @@
     "wrangler": "4.42.2"
   },
   "scripts": {
+    "setup": "npx tsx scripts/setup.ts",
     "typecheck": "tsc -b",
     "build": "vite build",
     "cf-typegen": "pnpm wrangler types",

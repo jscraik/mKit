@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="./brand/mKit-brand-logo.png" alt="mKit" height="120" />
+  <img src="./brand/mKit-brand-logo.png" alt="mKit" height="160" />
 </p>
 
 # mKit — MCP Server Boilerplate for Cloudflare Workers
 
-This repository is the official boilerplate for bootstrapping MCP servers on Cloudflare Workers with OAuth 2.1, Stripe billing, and OpenAI Apps SDK UI integration.
+This repository is a boilerplate for bootstrapping MCP servers on Cloudflare Workers with OAuth 2.1, Stripe billing, and OpenAI Apps SDK UI integration.
 
 Last updated: 2026-01-08
 Owner: TBD (set maintainer/team)
@@ -48,19 +48,19 @@ Review cadence: Quarterly (confirm)
 pnpm install
 ```
 
-### 2) Configure environment
+### 2) Run setup
 
 ```sh
-cp .env.example .env
+pnpm setup
 ```
 
-Update `.env` with your values and create the KV namespace in Cloudflare:
+This interactive script will:
 
-```sh
-pnpm wrangler kv namespace create OAUTH_KV
-```
-
-Update `wrangler.jsonc` with the namespace IDs from the command output.
+- Prompt for OAuth credentials (Google/GitHub)
+- Prompt for Stripe configuration (optional)
+- Generate a secure cookie encryption key
+- Create KV namespaces in Cloudflare
+- Write `.env` and update `wrangler.jsonc`
 
 ### 3) Run locally
 
@@ -169,5 +169,5 @@ Fix: Update `STRIPE_WEBHOOK_SECRET` with the value from Stripe dashboard.
 ## Reference
 
 - Project layout: `src/worker`, `src/auth`, `src/billing`, `src/tools`, `src/app`
-- Commands: `pnpm dev`, `pnpm dev:worker`, `pnpm build`, `pnpm deploy`, `pnpm test`, `pnpm lint`
+- Commands: `pnpm setup`, `pnpm dev`, `pnpm dev:worker`, `pnpm build`, `pnpm deploy`, `pnpm test`, `pnpm lint`
 - Related docs: `docs/architecture.md`, `docs/development.md`, `docs/deployment.md`, `docs/configuration.md`, `docs/runbook.md`
