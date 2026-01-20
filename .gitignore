@@ -199,3 +199,7 @@ dist
 !.dev.vars.example
 
 *.generated.ts
+# AI artifacts - transient only
+/ai/tmp/
+/ai/cache/
+/ai/raw/
