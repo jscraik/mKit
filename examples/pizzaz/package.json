@@ -2,7 +2,7 @@
   "name": "openai-apps-sdk-template-pizza",
   "description": "A template for building a React application with Vite, Hono, and Cloudflare Workers",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.26.0",
+    "@modelcontextprotocol/sdk": "^1.27.0",
     "@tailwindcss/vite": "^4.1.14",
     "agents": "^0.3.10",
     "embla-carousel-react": "^8.6.0",
