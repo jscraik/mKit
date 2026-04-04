@@ -2,7 +2,7 @@
   "name": "mkit",
   "description": "The official boilerplate for bootstrapping MCP servers on Cloudflare Workers with OAuth, Stripe monetization, and OpenAI Apps SDK integration",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.27.1",
+    "@modelcontextprotocol/sdk": "^1.28.0",
     "@stripe/agent-toolkit": "latest",
     "@tailwindcss/vite": "^4.1.14",
     "agents": "^0.3.10",
