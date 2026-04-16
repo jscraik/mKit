@@ -19,10 +19,10 @@ importers:
         version: 4.1.14(vite@7.3.2(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.21.0))
       agents:
         specifier: ^0.3.10
-        version: 0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.12)(react@19.2.0)(zod@3.25.76)
+        version: 0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.14)(react@19.2.0)(zod@3.25.76)
       hono:
-        specifier: ^4.12.12
-        version: 4.12.12
+        specifier: ^4.12.14
+        version: 4.12.14
       octokit:
         specifier: ^4.1.3
         version: 4.1.4
@@ -2297,8 +2297,8 @@ packages:
   hermes-parser@0.25.1:
     resolution: {integrity: sha512-6pEjquH3rqaI6cYAXYPcz9MS4rY6R4ngRgrgfDshRptUZIc3lw0MCIJIGDj9++mfySOuPTHB4nrSW99BCvOPIA==}
 
-  hono@4.12.12:
-    resolution: {integrity: sha512-p1JfQMKaceuCbpJKAPKVqyqviZdS0eUxH9v82oWo1kb9xjQ5wA6iP3FNVAPDFlz5/p7d45lO+BpSk1tuSZMF4Q==}
+  hono@4.12.14:
+    resolution: {integrity: sha512-am5zfg3yu6sqn5yjKBNqhnTX7Cv+m00ox+7jbaKkrLMRJ4rAdldd1xPd/JzbBWspqaQv6RSTrgFN95EsfhC+7w==}
     engines: {node: '>=16.9.0'}
 
   http-errors@2.0.1:
@@ -3437,14 +3437,14 @@ snapshots:
 
   '@cloudflare/ai-chat@0.0.6(agents@0.3.10)(ai@5.0.68(zod@3.25.76))(react@19.2.0)(zod@3.25.76)':
     dependencies:
-      agents: 0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.12)(react@19.2.0)(zod@3.25.76)
+      agents: 0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.14)(react@19.2.0)(zod@3.25.76)
       ai: 5.0.68(zod@3.25.76)
       react: 19.2.0
       zod: 3.25.76
 
   '@cloudflare/codemode@0.0.6(agents@0.3.10)(ai@5.0.68(zod@3.25.76))(typescript@5.9.3)(zod@3.25.76)':
     dependencies:
-      agents: 0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.12)(react@19.2.0)(zod@3.25.76)
+      agents: 0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.14)(react@19.2.0)(zod@3.25.76)
       ai: 5.0.68(zod@3.25.76)
       zod: 3.25.76
       zod-to-ts: 2.0.0(typescript@5.9.3)(zod@3.25.76)
@@ -3814,9 +3814,9 @@ snapshots:
       '@eslint/core': 0.16.0
       levn: 0.4.1
 
-  '@hono/node-server@1.19.13(hono@4.12.12)':
+  '@hono/node-server@1.19.13(hono@4.12.14)':
     dependencies:
-      hono: 4.12.12
+      hono: 4.12.14
 
   '@humanfs/core@0.19.1': {}
 
@@ -4050,9 +4050,9 @@ snapshots:
       - '@opentelemetry/sdk-trace-base'
       - openai
 
-  '@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.12.12)(zod@3.25.76)':
+  '@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.12.14)(zod@3.25.76)':
     dependencies:
-      '@hono/node-server': 1.19.13(hono@4.12.12)
+      '@hono/node-server': 1.19.13(hono@4.12.14)
       ajv: 8.18.0
       ajv-formats: 3.0.1(ajv@8.18.0)
       content-type: 1.0.5
@@ -4076,7 +4076,7 @@ snapshots:
 
   '@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)':
     dependencies:
-      '@hono/node-server': 1.19.13(hono@4.12.12)
+      '@hono/node-server': 1.19.13(hono@4.12.14)
       ajv: 8.18.0
       ajv-formats: 3.0.1(ajv@8.18.0)
       content-type: 1.0.5
@@ -4086,7 +4086,7 @@ snapshots:
       eventsource-parser: 3.0.6
       express: 5.2.1
       express-rate-limit: 8.3.2(express@5.2.1)
-      hono: 4.12.12
+      hono: 4.12.14
       jose: 6.2.2
       json-schema-typed: 8.0.2
       pkce-challenge: 5.0.1
@@ -4361,7 +4361,7 @@ snapshots:
       '@ai-sdk/provider': 2.0.1
       '@langchain/core': 0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(ws@8.18.0)(zod@3.25.76))
       '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
-      agents: 0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.12)(react@19.2.0)(zod@3.25.76)
+      agents: 0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.14)(react@19.2.0)(zod@3.25.76)
       ai: 5.0.68(zod@3.25.76)
       openai: 4.104.0(ws@8.18.0)(zod@3.25.76)
       stripe: 17.7.0
@@ -4675,12 +4675,12 @@ snapshots:
     dependencies:
       humanize-ms: 1.2.1
 
-  agents@0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.12)(react@19.2.0)(zod@3.25.76):
+  agents@0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.14)(react@19.2.0)(zod@3.25.76):
     dependencies:
       '@cfworker/json-schema': 4.1.1
       '@cloudflare/ai-chat': 0.0.6(agents@0.3.10)(ai@5.0.68(zod@3.25.76))(react@19.2.0)(zod@3.25.76)
       '@cloudflare/codemode': 0.0.6(agents@0.3.10)(ai@5.0.68(zod@3.25.76))(typescript@5.9.3)(zod@3.25.76)
-      '@modelcontextprotocol/sdk': 1.25.2(@cfworker/json-schema@4.1.1)(hono@4.12.12)(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.25.2(@cfworker/json-schema@4.1.1)(hono@4.12.14)(zod@3.25.76)
       ai: 5.0.68(zod@3.25.76)
       cron-schedule: 6.0.0
       escape-html: 1.0.3
@@ -5333,7 +5333,7 @@ snapshots:
     dependencies:
       hermes-estree: 0.25.1
 
-  hono@4.12.12: {}
+  hono@4.12.14: {}
 
   http-errors@2.0.1:
     dependencies:
