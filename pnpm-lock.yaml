@@ -19,10 +19,10 @@ importers:
         version: 4.1.14(vite@7.3.5(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.21.0))
       agents:
         specifier: ^0.3.10
-        version: 0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.25)(react@19.2.0)(zod@3.25.76)
+        version: 0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.27)(react@19.2.0)(zod@3.25.76)
       hono:
-        specifier: ^4.12.25
-        version: 4.12.25
+        specifier: ^4.12.27
+        version: 4.12.27
       octokit:
         specifier: ^4.1.3
         version: 4.1.4
@@ -2341,8 +2341,8 @@ packages:
   hermes-parser@0.25.1:
     resolution: {integrity: sha512-6pEjquH3rqaI6cYAXYPcz9MS4rY6R4ngRgrgfDshRptUZIc3lw0MCIJIGDj9++mfySOuPTHB4nrSW99BCvOPIA==}
 
-  hono@4.12.25:
-    resolution: {integrity: sha512-2NFaIyNVgJmBs/ecmtGzlmluTFs5cHEWGTdu0t1HBwYzoGXOL5nUQBRMXsXWla5i4KkG//QMzVP88m1+I3fdAQ==}
+  hono@4.12.27:
+    resolution: {integrity: sha512-1yrb/+w6HWQJrUCLkJ2IF5jNIPvvFkblV5RNOYl6bV+OA6p9GLcMpHFFGTosSvHvcAUibuUukRqhlYI4z32C7Q==}
     engines: {node: '>=16.9.0'}
 
   http-errors@2.0.1:
@@ -2895,8 +2895,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  semver@7.8.4:
-    resolution: {integrity: sha512-rUCObTnP32Q08R2uuIrt7r9PlEonuTmtuXYcW6s5kjdlj3xbnwe+21yXptAUYcMAABLkYYTtnmzb3w3EDZfueA==}
+  semver@7.8.5:
+    resolution: {integrity: sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -3476,14 +3476,14 @@ snapshots:
 
   '@cloudflare/ai-chat@0.0.6(agents@0.3.10)(ai@5.0.68(zod@3.25.76))(react@19.2.0)(zod@3.25.76)':
     dependencies:
-      agents: 0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.25)(react@19.2.0)(zod@3.25.76)
+      agents: 0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.27)(react@19.2.0)(zod@3.25.76)
       ai: 5.0.68(zod@3.25.76)
       react: 19.2.0
       zod: 3.25.76
 
   '@cloudflare/codemode@0.0.6(agents@0.3.10)(ai@5.0.68(zod@3.25.76))(typescript@5.9.3)(zod@3.25.76)':
     dependencies:
-      agents: 0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.25)(react@19.2.0)(zod@3.25.76)
+      agents: 0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.27)(react@19.2.0)(zod@3.25.76)
       ai: 5.0.68(zod@3.25.76)
       zod: 3.25.76
       zod-to-ts: 2.1.0(typescript@5.9.3)(zod@3.25.76)
@@ -3853,9 +3853,9 @@ snapshots:
       '@eslint/core': 0.16.0
       levn: 0.4.1
 
-  '@hono/node-server@1.19.13(hono@4.12.25)':
+  '@hono/node-server@1.19.13(hono@4.12.27)':
     dependencies:
-      hono: 4.12.25
+      hono: 4.12.27
 
   '@humanfs/core@0.19.1': {}
 
@@ -4089,9 +4089,9 @@ snapshots:
       - '@opentelemetry/sdk-trace-base'
       - openai
 
-  '@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.12.25)(zod@3.25.76)':
+  '@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.12.27)(zod@3.25.76)':
     dependencies:
-      '@hono/node-server': 1.19.13(hono@4.12.25)
+      '@hono/node-server': 1.19.13(hono@4.12.27)
       ajv: 8.18.0
       ajv-formats: 3.0.1(ajv@8.18.0)
       content-type: 1.0.5
@@ -4115,7 +4115,7 @@ snapshots:
 
   '@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)':
     dependencies:
-      '@hono/node-server': 1.19.13(hono@4.12.25)
+      '@hono/node-server': 1.19.13(hono@4.12.27)
       ajv: 8.18.0
       ajv-formats: 3.0.1(ajv@8.18.0)
       content-type: 1.0.5
@@ -4125,7 +4125,7 @@ snapshots:
       eventsource-parser: 3.0.6
       express: 5.2.1
       express-rate-limit: 8.3.2(express@5.2.1)
-      hono: 4.12.25
+      hono: 4.12.27
       jose: 6.2.2
       json-schema-typed: 8.0.2
       pkce-challenge: 5.0.1
@@ -4400,7 +4400,7 @@ snapshots:
       '@ai-sdk/provider': 2.0.1
       '@langchain/core': 0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(ws@8.18.0)(zod@3.25.76))
       '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
-      agents: 0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.25)(react@19.2.0)(zod@3.25.76)
+      agents: 0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.27)(react@19.2.0)(zod@3.25.76)
       ai: 5.0.68(zod@3.25.76)
       openai: 4.104.0(ws@8.18.0)(zod@3.25.76)
       stripe: 17.7.0
@@ -4715,12 +4715,12 @@ snapshots:
     dependencies:
       humanize-ms: 1.2.1
 
-  agents@0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.25)(react@19.2.0)(zod@3.25.76):
+  agents@0.3.10(@cloudflare/ai-chat@0.0.6)(@cloudflare/codemode@0.0.6)(@cloudflare/workers-types@4.20251011.0)(ai@5.0.68(zod@3.25.76))(hono@4.12.27)(react@19.2.0)(zod@3.25.76):
     dependencies:
       '@cfworker/json-schema': 4.1.1
       '@cloudflare/ai-chat': 0.0.6(agents@0.3.10)(ai@5.0.68(zod@3.25.76))(react@19.2.0)(zod@3.25.76)
       '@cloudflare/codemode': 0.0.6(agents@0.3.10)(ai@5.0.68(zod@3.25.76))(typescript@5.9.3)(zod@3.25.76)
-      '@modelcontextprotocol/sdk': 1.25.2(@cfworker/json-schema@4.1.1)(hono@4.12.25)(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.25.2(@cfworker/json-schema@4.1.1)(hono@4.12.27)(zod@3.25.76)
       ai: 5.0.68(zod@3.25.76)
       cron-schedule: 6.0.0
       escape-html: 1.0.3
@@ -5367,7 +5367,7 @@ snapshots:
     dependencies:
       hermes-estree: 0.25.1
 
-  hono@4.12.25: {}
+  hono@4.12.27: {}
 
   http-errors@2.0.1:
     dependencies:
@@ -5472,7 +5472,7 @@ snapshots:
       chalk: 4.1.2
       console-table-printer: 2.16.1
       p-queue: 6.6.2
-      semver: 7.8.4
+      semver: 7.8.5
       uuid: 10.0.0
     optionalDependencies:
       '@opentelemetry/api': 1.9.0
@@ -5867,7 +5867,7 @@ snapshots:
 
   semver@7.7.4: {}
 
-  semver@7.8.4: {}
+  semver@7.8.5: {}
 
   send@1.2.1:
     dependencies:
