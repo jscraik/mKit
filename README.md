@@ -6,78 +6,73 @@
 
 This repository is a boilerplate for bootstrapping MCP servers on Cloudflare Workers with OAuth 2.1, Stripe billing, and OpenAI Apps SDK UI integration.
 
-Last updated: 2026-01-08
-Owner: TBD (set maintainer/team)
-Review cadence: Quarterly (confirm)
+The included `hello-world` tool accepts an optional name. Its expected response is:
 
-## Doc requirements
+```text
+Tool: hello-world
+Input: {"name":"Jamie"}
+Text response: Hello Jamie!
+```
 
-- Audience tier: Beginner to intermediate
-- Scope: Using this repo as a template to configure, run, and deploy an MCP server
-- Non-scope: OAuth provider setup details, Stripe account setup, and product-specific UI design
-- Required approvals: Maintainer approval for production changes (confirm)
-
-## Table of contents
-
-- [Doc requirements](#doc-requirements)
-- [Risks and assumptions](#risks-and-assumptions)
-- [Prerequisites](#prerequisites)
-- [Quickstart](#quickstart)
-- [Common tasks](#common-tasks)
-- [Troubleshooting](#troubleshooting)
-- [Acceptance criteria](#acceptance-criteria)
-- [Evidence bundle](#evidence-bundle)
-- [Reference](#reference)
-
-## Risks and assumptions
-
-- Assumptions: You control a Cloudflare account, OAuth providers, and a Stripe account.
-- Risks / blast radius: Misconfigured secrets or webhook signing can cause auth/payment failures.
-- Rollback / recovery: Rotate secrets and redeploy; disable affected routes until fixed.
-
-## Prerequisites
-
-- Required: Node.js 20+, pnpm, Wrangler CLI, Cloudflare account
-- Optional: Stripe and OAuth provider accounts (needed to enable payments and login)
+This example comes from the [tool handler](src/tools/free/hello-world.ts); it is not a recording of a deployed service.
 
 ## Quickstart
 
-### 1) Install dependencies
+Use **Node.js 22.12.0 or newer on the 22.x line, or Node.js 24+**, pnpm, and Git. These versions meet the locked Vite and Vitest engine requirements. Wrangler is a project dependency and is invoked through pnpm.
+
+### 1) Get the project
 
 ```sh
+git clone https://github.com/jscraik/mKit.git
+cd mKit
 pnpm install
 ```
 
-### 2) Run setup
+### 2) Configure your development environment
+
+The setup script prompts for OAuth credentials, optional Stripe settings, and a cookie encryption key. It writes `.env` and updates `wrangler.jsonc`. If you choose to create KV namespaces, it also provisions resources in your Cloudflare account; authenticate with `pnpm wrangler login` before choosing that option.
 
 ```sh
-pnpm setup
+pnpm run setup
 ```
 
-This interactive script will:
+Use `pnpm run setup` to invoke this repository's script. `pnpm setup` is pnpm's own environment-setup command.
 
-- Prompt for OAuth credentials (Google/GitHub)
-- Prompt for Stripe configuration (optional)
-- Generate a secure cookie encryption key
-- Create KV namespaces in Cloudflare
-- Write `.env` and update `wrangler.jsonc`
+Review the resulting `.env` and KV bindings before starting the worker. See [configuration](docs/configuration.md) for the required values and [local development](docs/development.md) for manual configuration. OAuth provider credentials are needed for login; Stripe credentials are needed for payment features.
 
 ### 3) Run locally
 
+From the `mKit` checkout, start the UI:
+
 ```sh
 pnpm dev
+```
+
+In a second terminal, change to the same `mKit` directory and start the worker:
+
+```sh
 pnpm dev:worker
 ```
 
-Run each command in a separate terminal.
-
 ### 4) Verify
 
-Expected output:
+Open the local URL printed by Vite. Confirm that both terminals start without errors, then connect an MCP client to `/mcp` on the worker URL printed by Wrangler. List the available tools and call `hello-world` with `{"name":"Jamie"}`. A successful call returns the text `Hello Jamie!` from the example above.
 
-- Vite prints a local dev server URL without errors.
-- Wrangler prints a local worker URL and no startup errors.
-- A request to `/mcp` returns a non-5xx response.
+An HTTP response alone does not prove that an MCP tool works: confirm the tool list and the successful call. If configuration or authentication blocks that step, use [Troubleshooting](#troubleshooting).
+
+Next: [add a tool](#create-a-new-tool-to-expose-mcp-functionality), [add a widget](#add-a-new-widget-page-for-the-apps-sdk-ui), or follow the [deployment guide](docs/deployment.md).
+
+## Table of contents
+
+- [Quickstart](#quickstart)
+- [Common tasks](#common-tasks)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [Risks and assumptions](#risks-and-assumptions)
+- [Doc requirements](#doc-requirements)
+- [Acceptance criteria](#acceptance-criteria)
+- [Evidence bundle](#evidence-bundle)
+- [Reference](#reference)
 
 ## Common tasks
 
@@ -150,6 +145,27 @@ Fix: Re-check `OAUTH_ISSUER` and `OAUTH_JWKS_URI` in `.env`.
 Cause: Webhook signing secret does not match Stripe configuration.
 Fix: Update `STRIPE_WEBHOOK_SECRET` with the value from Stripe dashboard.
 
+## Contributing
+
+Use the checkout from [Quickstart](#quickstart), then run `pnpm typecheck`, `pnpm lint`, and `pnpm test` from its root. See [CONTRIBUTING.md](CONTRIBUTING.md) for review requirements and [CODESTYLE.md](CODESTYLE.md) for style guidance.
+
+## Risks and assumptions
+
+- Assumptions: You control the Cloudflare account and any OAuth or Stripe accounts used by the features you enable.
+- Risks / blast radius: Misconfigured secrets or webhook signing can cause auth/payment failures.
+- Rollback / recovery: Rotate secrets and redeploy; disable affected routes until fixed.
+
+## Doc requirements
+
+Last updated: 2026-11-24
+Owner: TBD (set maintainer/team)
+Review cadence: Quarterly (confirm)
+
+- Audience tier: Beginner to intermediate
+- Scope: Using this repo as a template to configure, run, and deploy an MCP server
+- Non-scope: OAuth provider setup details, Stripe account setup, and product-specific UI design
+- Required approvals: Maintainer approval for production changes (confirm)
+
 ## Acceptance criteria
 
 - [ ] `.env` created from `.env.example` with valid values.
@@ -169,8 +185,10 @@ Fix: Update `STRIPE_WEBHOOK_SECRET` with the value from Stripe dashboard.
 ## Reference
 
 - Project layout: `src/worker`, `src/auth`, `src/billing`, `src/tools`, `src/app`
-- Commands: `pnpm setup`, `pnpm dev`, `pnpm dev:worker`, `pnpm build`, `pnpm deploy`, `pnpm test`, `pnpm lint`
+- Commands: `pnpm run setup`, `pnpm dev`, `pnpm dev:worker`, `pnpm build`, `pnpm deploy`, `pnpm test`, `pnpm lint`
 - Related docs: `docs/architecture.md`, `docs/development.md`, `docs/deployment.md`, `docs/configuration.md`, `docs/runbook.md`
+
+The managed workflow below is for the maintainer's configured workstation. Its absolute paths refer to that environment; public contributors should use [Contributing](#contributing) above. Maintainer verification and PR requirements still apply before merge.
 
 <!-- AGENT-FIRST-WORKFLOW:START -->
 ## Agent-first workflow
