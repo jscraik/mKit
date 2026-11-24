@@ -2,7 +2,7 @@
 
 This doc explains how to run the worker and UI locally.
 
-Last updated: 2026-01-08
+Last updated: 2026-11-24
 Owner: TBD (set maintainer/team)
 Review cadence: Quarterly (confirm)
 
@@ -33,7 +33,7 @@ Review cadence: Quarterly (confirm)
 
 ## Prerequisites
 
-- Required: Node.js 20+, pnpm, Wrangler CLI
+- Required: Node.js 22.12.0+ on the 22.x line or Node.js 24+, pnpm (Wrangler is a project dependency)
 - Optional: Stripe and OAuth test credentials
 
 ## Quickstart
